@@ -1,5 +1,6 @@
 <template>
   <v-app class="blue">
+
     <Navbar/>
     <v-main class="mx-4 mb-4">
       <router-view/>

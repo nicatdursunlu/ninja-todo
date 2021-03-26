@@ -46,6 +46,7 @@
           </v-avatar>
           <p class="subtitle-1 white--text mt-1">The Net Ninja</p>
         </v-flex>
+<!--        Popup add project -->
         <v-flex class="mt-4 mb-3">
           <Popup />
         </v-flex>
