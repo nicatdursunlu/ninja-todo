@@ -76,6 +76,7 @@ export default {
           console.log("added to database")
           this.loading = false;
           this.dialog = false;
+          this.$emit('projectAdded');
         })
 
       }

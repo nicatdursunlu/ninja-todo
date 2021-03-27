@@ -1,6 +1,12 @@
 <template>
   <nav>
-    <!--    toolbar-->
+    <!--    snackbar -->
+    <v-snackbar v-model="snackbar" :timeout="4000" top color="success">
+      <span>Awesome! You added a new project.</span>
+      <v-btn plain color="white" @click="snackbar = false">Close</v-btn>
+    </v-snackbar>
+
+    <!--    toolbar -->
     <v-toolbar flat app>
       <v-app-bar-nav-icon class="grey--text" @click="toggleDrawer"/>
       <v-toolbar-title class="text-uppercase grey--text">
@@ -44,11 +50,11 @@
             <img
                 src="https://raw.githubusercontent.com/iamshaunjp/vuetify-playlist/lesson-20/todo-ninja/public/avatar-1.png">
           </v-avatar>
-          <p class="subtitle-1 white--text mt-1">The Net Ninja</p>
+          <p class="subtitle-1 white--text mt-1">Nijat Dursunlu</p>
         </v-flex>
-<!--        Popup add project -->
+        <!--        Popup add project -->
         <v-flex class="mt-4 mb-3">
-          <Popup />
+          <Popup @projectAdded="snackbar = true"/>
         </v-flex>
       </v-layout>
       <v-list>
@@ -78,7 +84,8 @@ export default {
       {icon: 'dashboard', text: 'Dashboard', route: '/'},
       {icon: 'folder', text: 'My Projects', route: '/projects'},
       {icon: 'person', text: 'Team', route: '/team'},
-    ]
+    ],
+    snackbar: false
   }),
   methods: {
     toggleDrawer() {
